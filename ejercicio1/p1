@@ -1,0 +1,23 @@
+miLength :: [a] -> Int
+miLength [] = 0
+miLength (_:xs) = 1 + miLength xs
+
+miLast :: [a] -> a
+miLast [x] = x
+miLast (_:xs) = miLast xs
+
+duplicar :: [Int] -> [Int]
+duplicar [] = []
+duplicar (x:xs) = x*2 : duplicar xs
+
+eliminarPares :: [Int] -> [Int]
+eliminarPares [] = []
+eliminarPares (x:xs)
+    | mod x 2 == 0 = eliminarPares xs
+    | otherwise = x : eliminarPares xs
+
+--test
+miLength [1,2,3,4]
+miLast ["a", "b", "c", "d"]
+duplicar [2,4,6,8]
+eliminarPares [1, 3, 4, 5, 8]
