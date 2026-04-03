@@ -1,0 +1,27 @@
+-- 1. procesarLecturas
+procesarLecturas :: (Double -> Double) -> [Double] -> [Double]
+procesarLecturas f xs = map f xs
+
+celsiusAFarenheit :: Double -> Double
+celsiusAFarenheit c = c * 9/5 + 32
+
+-- 2. crearFiltro
+crearFiltro :: (a -> Bool) -> ([a] -> [a])
+crearFiltro f = filter f
+
+soloPares :: [Int] -> [Int]
+soloPares = crearFiltro even
+
+-- 3. enRango
+enRango :: Int -> Int -> (Int -> Bool)
+enRango minVal maxVal = \x -> x >= minVal && x <= maxVal
+
+entre5y10 :: Int -> Bool
+entre5y10 = enRango 5 10
+
+-- 4. potenciador
+potenciador :: Int -> (Int -> Int)
+potenciador n = \x -> x ^ n
+
+potencia5 :: Int -> Int
+potencia5 = potenciador 5
