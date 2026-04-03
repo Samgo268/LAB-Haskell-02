@@ -1,0 +1,11 @@
+miLenght :: [a] -> Int
+miLenght = length
+
+miLast :: [a] -> a
+miLast = last
+
+duplicar :: [Int] -> [Int]
+duplicar = map (*2) 
+
+eliminarPares :: [Int] -> [Int]
+eliminarPares = filter odd 
